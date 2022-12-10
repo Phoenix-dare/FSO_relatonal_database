@@ -1,0 +1,87 @@
+GET http://localhost:4000/api/blogs
+
+###
+GET http://localhost:4000/api/authors
+
+###
+GET http://localhost:4000/api/readinglists/
+
+
+###
+POST  http://localhost:4000/api/readinglists
+Content-Type: application/json
+
+{
+    "blogId":4,
+    "userId":1
+}
+###
+PUT http://localhost:4000/api/readinglists/7
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjYXJsbGV0QGRhcmtob2xkLmNvbSIsImlkIjoyLCJpYXQiOjE2NzA1ODI1NTJ9.hphhI4c-oVJh8KAy6URbHCJ6dRUqAQYeusSB0naKT_8
+
+{
+    "isRead":true
+}
+###
+POST http://localhost:4000/api/blogs 
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyQHN0ZXBoZW4uY29tIiwiaWQiOjEsImlhdCI6MTY3MDY1MzE5NH0.HEh-9ZrpIfw2RGILehPp6DPd2T4RtySybvqmbEggfeo
+
+{
+    "title":"Vision",
+    "author":"Marvel",
+    "url":"fakeurl.com",
+    "year":2021
+}
+
+###
+PUT http://localhost:4000/api/blogs/6
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJhbGFuY2VAa2VlcGVyLmNvbSIsImlkIjoxLCJpYXQiOjE2NzA1NzA2MjF9.aU_XNN_hjzfl6-hVCgZ_M1nUUs4T5fSHV_iXF1GtFVw
+
+{
+    "title":"Hulk Smash",
+    "author":"Bruce Banner",
+    "url":"fakeurl.com",
+    "likes":"4"
+}
+
+###
+DELETE  http://localhost:4000/api/blogs/2
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0cm9uZ2VzdCBTbWFzaGVyIiwiaWQiOjEsImlhdCI6MTY3MDQyNzA5NH0.LnDaF2yVrdXQAuqYy7JXbLR_wcgbtp1XgBz38chBhNI
+
+
+###
+GET http://localhost:4000/api/users/
+
+###
+POST http://localhost:4000/api/users 
+Content-Type: application/json
+
+{
+    "name":"wanda",
+    "username":"scarllet@darkhold.com"
+}
+###
+PUT http://localhost:4000/api/users/Bruce%20
+Content-Type: application/json
+
+{
+    "name":"Hulk",
+    "username":"Strongest Smasher"
+}
+
+###
+POST http://localhost:4000/api/login 
+Content-Type: application/json
+
+{
+    "password":"nosec",
+    "username":"scarllet@darkhold.com"
+}
+
+###
+DELETE  http://localhost:4000/api/logout
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjYXJsbGV0QGRhcmtob2xkLmNvbSIsImlkIjoyLCJpYXQiOjE2NzA2NTY0MzV9.DKtSeIXHX8McKJCHf91TNG6EQ8qxAPeozpUHWQ755v0
+
